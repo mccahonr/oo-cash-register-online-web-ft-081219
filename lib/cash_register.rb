@@ -1,7 +1,7 @@
 class CashRegister
 
     attr_accessor :total, :discount, :cart, :last_transaction
-    
+
     def initialize(discount = 0)
         @total = 0
         @discount = discount
@@ -13,14 +13,14 @@ class CashRegister
         quantity.times do
             @cart << title
         end
-        # counter = 0 
+        # counter = 0
         # while counter < quantity
         #     @cart << title
         #     counter += 1
-        # end 
+        # end
         self.last_transaction = price * quantity
-        @total += self.last_transaction  
-    end 
+        @total += self.last_transaction
+    end
 
     def apply_discount
         #   binding.pry
@@ -30,7 +30,7 @@ class CashRegister
             @total = self.total * (1-(self.discount/100.0))
             "After the discount, the total comes to $#{@total.to_i}."
         end
-        
+
     end
 
     def items
